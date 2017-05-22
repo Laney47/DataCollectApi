@@ -3,7 +3,7 @@ namespace DataCollectApi.Data
 {
     public class AccelerometerData
     {
-        //Property
+        //Propertykkkk
         [JsonProperty(PropertyName = "id")]
         public string ID { get; set; }
         public double[] x { get; set; }
