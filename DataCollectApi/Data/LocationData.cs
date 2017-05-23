@@ -5,8 +5,8 @@ namespace DataCollectApi.Data
     {
         [JsonProperty(PropertyName = "id")]
         public string ID { get; set; }
-        public string latitude { get; set; }
-        public string longitude { get; set; }
+        public double[] latitude { get; set; }
+        public double[] longitude { get; set; }
 
 
     }
