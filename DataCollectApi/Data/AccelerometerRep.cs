@@ -20,11 +20,11 @@ namespace DataCollectApi.Data
                 .ToList());
         }
 
-        public Task<AccelerometerData> GetAccDataByIdAsync(string id)
+        public Task<AccelerometerData> GetAccDataByOwnerAsync(string owner)
         {
             return Task<AccelerometerData>.Run(() =>
                 Client.CreateDocumentQuery<AccelerometerData>(Collection.DocumentsLink)
-                .Where(p => p.ID == id)
+                .Where(p => p.Owner == owner)
                 .AsEnumerable()
                 .FirstOrDefault());
         }

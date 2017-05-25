@@ -35,10 +35,10 @@ namespace DataCollectApi.Controllers
         }
 
         // GET: api/Location/5
-        public async Task<IHttpActionResult> Get(string id)
+        public async Task<IHttpActionResult> Get(string owner)
         {
             await Initilization;
-            var location = await _repo.GetLocationByIdAsync(id);
+            var location = await _repo.GetLocationByOwnerAsync(owner);
             if (location != null)
                 return Ok(location);
             return NotFound();

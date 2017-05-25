@@ -35,10 +35,10 @@ namespace DataCollectApi.Controllers
         }
 
         // GET: api/Accdata/5
-        public async Task<IHttpActionResult> Get(string id)
+        public async Task<IHttpActionResult> Get(string owner)
         {
             await Initilization;
-            var accdata = await _repo.GetAccDataByIdAsync(id);
+            var accdata = await _repo.GetAccDataByOwnerAsync(owner);
             if (accdata != null)
                 return Ok(accdata);
             return NotFound();

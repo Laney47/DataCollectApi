@@ -20,11 +20,11 @@ namespace DataCollectApi.Data
                 .ToList());
         }
 
-        public Task<LocationData> GetLocationByIdAsync(string id)
+        public Task<LocationData> GetLocationByOwnerAsync(string owner)
         {
             return Task<LocationData>.Run(() =>
                 Client.CreateDocumentQuery<LocationData>(Collection.DocumentsLink)
-                .Where(p => p.ID == id)
+                .Where(p => p.Owner == owner)
                 .AsEnumerable()
                 .FirstOrDefault());
         }
