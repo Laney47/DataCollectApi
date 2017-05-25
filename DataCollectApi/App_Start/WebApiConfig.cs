@@ -23,33 +23,11 @@ namespace DataCollectApi
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
-
+                defaults: new {id = RouteParameter.Optional}
+                
             );
 
-            config.Routes.MapHttpRoute(
-                name: "OwnerAcc",
-                routeTemplate: "api/{controller}/{owner}",
-                 defaults: new
-                 {
-                     controller = "AccelerometerController",
-                     action = "Get",
-                     Owner = RouteParameter.Optional
-                 }
-
-            );
-
-            config.Routes.MapHttpRoute(
-                name: "OwnerLocation",
-                routeTemplate: "api/{controller}/{owner}",
-                 defaults: new
-                 {
-                     controller = "LocationController",
-                     action = "Get",
-                     Owner = RouteParameter.Optional
-                 }
-
-            );
+            
         }
     }
 }

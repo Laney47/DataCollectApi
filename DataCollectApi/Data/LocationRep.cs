@@ -29,6 +29,15 @@ namespace DataCollectApi.Data
                 .FirstOrDefault());
         }
 
+        public Task<LocationData> GetLocationByIdAsync(string id)
+        {
+            return Task<LocationData>.Run(() =>
+                Client.CreateDocumentQuery<LocationData>(Collection.DocumentsLink)
+                .Where(p => p.ID == id)
+                .AsEnumerable()
+                .FirstOrDefault());
+        }
+
         public Task<ResourceResponse<Document>> CreateLocation(LocationData location)
         {
             return Client.CreateDocumentAsync(Collection.DocumentsLink, location);
