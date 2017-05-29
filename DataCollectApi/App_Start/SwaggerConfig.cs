@@ -98,7 +98,7 @@ namespace DataCollectApi
                         // those comments into the generated docs and UI. You can enable this by providing the path to one or
                         // more Xml comment files.
                         //
-                        c.IncludeXmlComments(string.Format(@"{0}\bin\DataCollectApi.XML", System.AppDomain.CurrentDomain.BaseDirectory));
+                      //  c.IncludeXmlComments(string.Format(@"{0}\bin\DataCollectApi.XML", System.AppDomain.CurrentDomain.BaseDirectory));
                         //c.IncludeXmlComments(GetXmlCommentsPath());
 
                         // Swashbuckle makes a best attempt at generating Swagger compliant JSON schemas for the various types
