@@ -81,7 +81,13 @@ namespace DataCollectApi.Controllers
         public async Task<IHttpActionResult> Post(RegisterUserData users)
         {
             await Initilization;
+            
+            var user = await _repo.CheckIfUserExistAsync(users.email);
+            if (user != null)
+                return BadRequest();
+            
             var response = await _repo.ReigsterUser(users);
+            
             return Ok(response.Resource);
         }
 

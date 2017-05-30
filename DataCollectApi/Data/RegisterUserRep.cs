@@ -28,6 +28,14 @@ namespace DataCollectApi.Data
                 .AsEnumerable().FirstOrDefault());
         }
 
+        public Task<RegisterUserData> CheckIfUserExistAsync(string mail)
+        {
+            return Task<RegisterUserData>.Run(() =>
+                Client.CreateDocumentQuery<RegisterUserData>(Collection.DocumentsLink)
+                .Where(p => p.email == mail)
+                .AsEnumerable().FirstOrDefault());
+        }
+
         public Task<RegisterUserData> GetUserByIdAsync(string id)
         {
             return Task<RegisterUserData>.Run(() =>
